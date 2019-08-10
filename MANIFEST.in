@@ -1,0 +1,4 @@
+include manager/schema.sql
+graft manager/static
+graft manager/templates
+global-exclude *.pyc
