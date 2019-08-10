@@ -1,7 +1,7 @@
 import os
 from manager import db, auth
 import logging
-
+from flask import jsonify
 from flask import Flask
 from manager.scheduler import Scheduler
 from manager.log_handler import LogHandler
@@ -50,4 +50,9 @@ def create_app(test_config=None):
     def start_manager():
         return 'SUCCESS'
 
+    @app.route('/api')
+    def api():
+        return jsonify(username="aa",
+                       email="bb")
     return app
+
