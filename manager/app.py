@@ -5,7 +5,7 @@ from flask import jsonify
 from flask import Flask
 from manager.scheduler import Scheduler
 from manager.log_handler import LogHandler
-
+from werkzeug.contrib.fixers import ProxyFix
 
 logger = logging.getLogger(__name__)
 
@@ -54,7 +54,7 @@ def api():
     return jsonify(username="aa",
                    email="bb")
 
-
+app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
     app.run(debug=True)
 
