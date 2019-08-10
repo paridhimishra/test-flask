@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # from sklearn.ensemble import RandomForestClassifier
 import pickle
 
-from util import plot_roc
+from manager.sentiment.util import plot_roc
 # spacy_tok
 
 

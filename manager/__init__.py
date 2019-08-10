@@ -5,7 +5,7 @@ from flask import jsonify
 from flask import Flask
 from manager.scheduler import Scheduler
 from manager.log_handler import LogHandler
-import manager.nlp_model
+import manager.model_handler
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +32,7 @@ def create_app(test_config=None):
         pass
 
     db.init_app(app)
-    nlp_model.init_app(app)
+    model_handler.init_app(app)
     # apply the blueprints to the app
     app.register_blueprint(auth.bp)
 

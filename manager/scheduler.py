@@ -1,7 +1,7 @@
 import schedule
 import time
 from manager.log_handler import LogHandler
-import manager.nlp_model
+import manager.model_handler
 
 
 # https://schedule.readthedocs.io/
@@ -17,7 +17,7 @@ class Scheduler:
 
     def job(self):
         LogHandler("Scheduler job started job XXX..........").debug()
-        manager.nlp_model.run_model()
+        manager.model_handler.run_model()
 
     def start(self):
         while True:
