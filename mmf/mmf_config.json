@@ -12,10 +12,6 @@
     "model_1":{
       "schedule_type":"minutes",
       "schedule_interval":"1"
-    },
-    "model_2":{
-      "schedule_type":"minutes",
-      "schedule_interval":"2"
     }
   }
 }
