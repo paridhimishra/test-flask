@@ -55,7 +55,7 @@ class LogHandler(object):
         logger.info('Log Handler initialised')
         #self.logger.basicConfig(filemode="a")
 
-        logging.basicConfig(filemode="a", filename=os.path.dirname(os.path.abspath(__file__)) + '/' + config['LOG_FILE'], format=config['LOG_FORMAT'], level=logging.INFO)
+        logging.basicConfig(filemode="a", filename=os.path.dirname(os.path.abspath(__file__)) + '/' + config['LOG_FILE'], format=config['LOG_FORMAT'], level=logging.DEBUG)
         logger.debug("hey ho ----------------------")
 
     def debug(self):
