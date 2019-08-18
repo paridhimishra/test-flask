@@ -1,0 +1,7 @@
+*.csv
+*.pyc
+*.log
+*.pickle
+*.html
+*.yml
+*.pytest_cache

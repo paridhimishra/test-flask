@@ -1,0 +1,21 @@
+{
+  "log":{
+    "file":"app.log",
+     "format": "%(asctime)20s%(message)20s"
+  },
+ "scheduler":{
+   "sleep_interval":10,
+   "schedule_type_hour":"hour",
+   "schedule_type_minutes":"minutes"
+ },
+  "models":{
+    "model_1":{
+      "schedule_type":"minutes",
+      "schedule_interval":"1"
+    },
+    "model_2":{
+      "schedule_type":"minutes",
+      "schedule_interval":"2"
+    }
+  }
+}

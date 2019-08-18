@@ -7,7 +7,7 @@ with io.open("README.md", "rt", encoding="utf8") as f:
     readme = f.read()
 
 setup(
-    name="manager",
+    name="mmf",
     version="1.0.0",
     description="basic app to test flask",
     long_description=readme,

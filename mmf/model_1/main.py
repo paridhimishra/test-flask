@@ -1,18 +1,17 @@
-from flask import Flask
 import pickle
 import numpy as np
-from manager.sentiment.model import NLPModel
+from mmf.model_1.src.model import NLPModel
+import os
 
 def run_model():
+
     model = NLPModel()
 
-    clf_path = 'manager/sentiment/lib/models/SentimentClassifier.pkl'
-    with open(clf_path, 'rb') as f:
-        model.clf = pickle.load(f)
+    with open(os.path.join(os.path.dirname(__file__) , 'models/SentimentClassifier.pkl'), 'rb') as model_file:
+        model.clf = pickle.load(model_file)
 
-    vec_path = 'manager/sentiment/lib/models/TFIDFVectorizer.pkl'
-    with open(vec_path, 'rb') as f:
-        model.vectorizer = pickle.load(f)
+    with open(os.path.join(os.path.dirname(__file__) ,  'models/TFIDFVectorizer.pkl'), 'rb') as model_file:
+        model.vectorizer = pickle.load(model_file)
 
     uq_vectorized = model.vectorizer_transform(np.array(["this is a sentence"]))
     prediction = model.predict(uq_vectorized)

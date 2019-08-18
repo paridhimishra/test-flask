@@ -1,0 +1,40 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "required": [
+        "env"
+    ],
+    "properties": {
+        "env": {
+            "$id": "#/properties/env",
+            "type": "string",
+            "enum": ["prod", "non-prod", "sit", "bat", "uat", "dev"],
+            "default": "dev"
+        },
+        "var1": {
+            "$id": "#/properties/var1",
+            "type": "string",
+            "title": "First Variable",
+            "examples": [
+                "something", "something else"
+            ]
+        },
+        "var2": {
+            "$id": "#/properties/SIMPLE_EXCLUDE",
+            "type": "object",
+            "title": "Second Variable with underlings",
+            "required": ["subvar2"],
+            "properties": {
+                "subvar1": {
+                    "type": "number"
+                },
+                "subvar2": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

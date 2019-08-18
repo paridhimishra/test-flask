@@ -1,0 +1,13 @@
+- hosts: localhost
+
+  tasks:
+  - name: "Run Sample Model"
+    shell: |
+      python src/run.py
+    register:
+      output
+    args:
+      executable: /bin/bash
+
+  - name: "Debug of PreStep1"
+    debug: msg="the return output of the model is {{ output.stdout }}"
